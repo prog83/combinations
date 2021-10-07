@@ -1,0 +1,71 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --silent",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "radency",
+  "author": "prog83",
+  "description": "Radency test exercise",
+  "homepage": "https://gitlab.com/prog83/radency",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/prog83/radency.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/prog83/radency/-/issues"
+  },
+  "keywords": [
+    "javascipt",
+    "radency",
+    "combination"
+  ],
+  "module": "dist/radency.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/radency.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/radency.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^5.0.5",
+    "husky": "^7.0.2",
+    "nodemon": "^2.0.13",
+    "size-limit": "^5.0.5",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
+  }
+}
