@@ -1,4 +1,4 @@
-import { chooseDistance } from '../src';
+const chooseDistance = require('../src/implementation');
 
 describe('not valid arguments', () => {
   test('not valid total miles', () => {

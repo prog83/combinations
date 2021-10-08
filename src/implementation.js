@@ -1,11 +1,40 @@
-import {
-  checkMaxTotalMiles,
-  checkCountOfCities,
-  checkListDistance,
-} from './validate';
-import { sumArray } from './utils';
+const sumArray = array => array.reduce((acc, value) => acc + value, 0);
 
-const linearSearchTotalMiles = (array: Array<number>, item: number) => {
+const checkMaxTotalMiles = miles => {
+  if (typeof miles !== 'number' || miles < 0) {
+    throw new Error('Максимальна сума відстаней, ціле число >= 0');
+  }
+
+  return miles;
+};
+
+const checkCountOfCities = cities => {
+  if (typeof cities !== 'number' || cities < 1) {
+    throw new Error('Кількість міст, які потрібно відвідати, k >= 1');
+  }
+
+  return cities;
+};
+
+const checkListDistance = list => {
+  if (!Array.isArray(list)) {
+    throw new Error('Список відстаней має бути массивом!');
+  }
+
+  if (list.some(item => typeof item !== 'number' || item < 0)) {
+    throw new Error(
+      'Усі відстані в списку відстаней мають бути додатними або нульовими цілими числами!'
+    );
+  }
+
+  if (list.length < 1) {
+    throw new Error('Список відстаней має містить принаймні один елемент!');
+  }
+
+  return [...list];
+};
+
+const linearSearchTotalMiles = (array, item) => {
   console.log(array);
   let max = array[0];
   for (let index = 0; index < array.length; index++) {
@@ -18,12 +47,8 @@ const linearSearchTotalMiles = (array: Array<number>, item: number) => {
   return max <= item ? max : null;
 };
 
-const getTotalMilesCombination = (
-  total: number,
-  count: number,
-  list: Array<number>
-) => {
-  const sumCombinationArray: Array<number> = [];
+const getTotalMilesCombination = (total, count, list) => {
+  const sumCombinationArray = [];
   const tempArray = [
     ...new Array(count).fill(null).map((_, index) => index),
     list.length,
@@ -58,7 +83,7 @@ const getTotalMilesCombination = (
   return linearSearchTotalMiles(sumCombinationArray, total);
 };
 
-export const chooseDistance = (t: any, k: any, ls: any) => {
+const chooseDistance = (t, k, ls) => {
   try {
     // validate
     const maxTotalMiles = checkMaxTotalMiles(t);
@@ -74,11 +99,11 @@ export const chooseDistance = (t: any, k: any, ls: any) => {
 
     return getTotalMilesCombination(maxTotalMiles, countOfCities, listDistance);
   } catch (error) {
-    const { message } = error as Error;
+    const { message } = error;
     console.log(message);
 
     return null;
   }
 };
 
-export default { chooseDistance };
+module.exports = chooseDistance;
