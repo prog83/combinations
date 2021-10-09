@@ -7,15 +7,16 @@ import { sumArray } from './utils';
 
 const linearSearchTotalMiles = (array: Array<number>, item: number) => {
   console.log(array);
-  let max = array[0];
+
+  let max: number | null = null;
   for (let index = 0; index < array.length; index++) {
     const element = array[index];
-    if (element > max && element <= item) {
+    if (element >= (max ?? 0) && element <= item) {
       max = element;
     }
   }
 
-  return max <= item ? max : null;
+  return max;
 };
 
 const getTotalMilesCombination = (
@@ -80,5 +81,7 @@ export const chooseDistance = (t: any, k: any, ls: any) => {
     return null;
   }
 };
+
+console.log(chooseDistance(230, 3, [0, 0, 0, 0, 0, 0, 0]));
 
 export default { chooseDistance };

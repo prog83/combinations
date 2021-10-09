@@ -35,16 +35,15 @@ const checkListDistance = list => {
 };
 
 const linearSearchTotalMiles = (array, item) => {
-  console.log(array);
-  let max = array[0];
+  let max = null;
   for (let index = 0; index < array.length; index++) {
     const element = array[index];
-    if (element > max && element <= item) {
+    if (element >= (max ?? 0) && element <= item) {
       max = element;
     }
   }
 
-  return max <= item ? max : null;
+  return max;
 };
 
 const getTotalMilesCombination = (total, count, list) => {

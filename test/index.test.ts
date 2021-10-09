@@ -56,6 +56,8 @@ describe('works', () => {
   });
   test('max', () => {
     expect(chooseDistance(174, 3, [51, 56, 58, 59, 61])).toBe(173);
+    expect(chooseDistance(230, 3, [0, 0, 0, 0, 0, 0, 0])).toBe(0);
+    expect(chooseDistance(230, 3, [91, 74, 73, 85, 73, 81, 87])).toBe(228);
   });
   test('not exist', () => {
     expect(chooseDistance(10, 4, [51, 56])).toBeNull();
