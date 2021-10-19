@@ -32,30 +32,30 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "radency",
+  "name": "combinations",
   "author": "prog83",
-  "description": "Radency test exercise",
-  "homepage": "https://gitlab.com/prog83/radency",
+  "description": "Combinations",
+  "homepage": "https://gitlab.com/prog83/combinations",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/prog83/radency.git"
+    "url": "https://gitlab.com/prog83/combinations.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/prog83/radency/-/issues"
+    "url": "https://gitlab.com/prog83/combinations/-/issues"
   },
   "keywords": [
-    "javascipt",
-    "radency",
+    "TypeScript",
+    "Jest",
     "combination"
   ],
-  "module": "dist/radency.esm.js",
+  "module": "dist/combinations.esm.js",
   "size-limit": [
     {
-      "path": "dist/radency.cjs.production.min.js",
+      "path": "dist/combinations.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/radency.esm.js",
+      "path": "dist/combinations.esm.js",
       "limit": "10 KB"
     }
   ],

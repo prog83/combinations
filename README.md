@@ -1,10 +1,10 @@
-# Radency
+# Combinations
 
-test exercise
+Combinations
 
 ## Installation
 
-Download or git clone [source code](https://gitlab.com/prog83/radency).
+Download or git clone [source code](https://gitlab.com/prog83/combinations).
 
 Use the package manager [npm](https://www.npmjs.com/get-npm) to install.
 
